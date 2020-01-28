@@ -4,6 +4,7 @@ import 'package:components/ui/checkbox.dart';
 import 'package:components/ui/appbar.dart';
 import 'package:components/ui/alertbox.dart';
 import 'package:components/ui/radiobutton.dart';
+import 'package:components/ui/input_list.dart';
 
 class MyHome extends StatelessWidget {
   @override
@@ -12,7 +13,8 @@ class MyHome extends StatelessWidget {
       appBar: AppBar(
         title: Text('Different UI Decoration'),
       ),
-      body:Container(
+      body:SingleChildScrollView(
+      child:Container(
         padding: EdgeInsets.all(10.0),
         child: Column(
           children: <Widget>[
@@ -158,9 +160,39 @@ class MyHome extends StatelessWidget {
                 );
               },
             ),
+            Padding(
+              padding: EdgeInsets.only(top: 10.0),
+            ),
+            InkWell(
+              child: Container(
+                width: double.infinity,
+                height: 70.0,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.pink),
+                    borderRadius: BorderRadius.all(Radius.circular(5.0))
+                ),
+                child:Center(
+                  child: Text(
+                    'Input Boxes',
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.pink
+                    ),
+                  ),
+                ),
+              ),
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyInputBox()),
+                );
+              },
+            ),
           ],
       ),
       ),
+    ),
     );
   }
 }

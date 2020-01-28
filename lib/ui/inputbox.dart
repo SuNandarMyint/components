@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MyInputBox extends StatelessWidget {
+class MyInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-            'Input Boxes'
+            'Simple Form Validation'
         ),
       ),
       body: MyInputForm(),
